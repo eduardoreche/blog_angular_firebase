@@ -7,7 +7,8 @@ angular.module('blogApp', ['firebase', 'ui.router'])
     	$stateProvider//commons
 	      .state('home', { 
 	        url: '/',
-	        templateUrl: 'views/main.html'
+	        templateUrl: 'views/main.html', 
+	        controller: 'PostCtrl'
 	      })
 	      .state('entry', {
 	      	url: '/entry',
