@@ -4,14 +4,19 @@ angular.module('blogApp', ['firebase', 'ui.router'])
 	.config(function($stateProvider, $urlRouterProvider) {
     	$urlRouterProvider.otherwise('/');
 
-    	$stateProvider//commons
-	      .state('home', { 
+    	$stateProvider
+    	  .state('posts',{
+    	  	url: '',
+    	  	template: '<div ui-view></div>',
+    	  	controller: 'PostCtrl',
+    	  	abstract: true
+    	  })
+	      .state('posts.home', { 
 	        url: '/',
-	        templateUrl: 'views/main.html', 
-	        controller: 'PostCtrl'
+	        templateUrl: 'views/main.html'
 	      })
-	      .state('entry', {
-	      	url: '/entry',
+	      .state('posts.entry', {
+	      	url: '/entry/:id',
 	      	templateUrl: 'views/entry.html'
 	      });
 

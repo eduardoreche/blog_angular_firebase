@@ -2,8 +2,12 @@
 
 angular.module('blogApp')
 
-	.controller('PostCtrl', ['$scope', 'Post', function($scope, Post) {
+	.controller('PostCtrl', ['$scope', '$stateParams', '$state', 'Post', 
+		function($scope, $stateParams, $state, Post) {
 
 		$scope.posts = Post;
+
+		//$scope.post = ($stateParams)
+
 
 	}]);
